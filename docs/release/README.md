@@ -64,6 +64,9 @@ includes releases for the following components:
 - Manifest images with tags equal to the release
   (e.g [`v0.11.1`](https://github.com/kubeflow/katib/blob/v0.11.1/manifests/v1beta1/installs/katib-standalone/kustomization.yaml#L21-L33)).
 
+- Public ConfigMap version with tag equal to the release
+  (e.g `kubeflow_katib_version: v0.11.1` in all install kustomization.yaml files).
+
 - Katib Python SDK where version is in this format: `X.Y.Z` or `X.Y.ZrcN`
   (e.g [`0.11.1`](https://github.com/kubeflow/katib/blob/v0.11.1/sdk/python/v1beta1/setup.py#L22)).
 

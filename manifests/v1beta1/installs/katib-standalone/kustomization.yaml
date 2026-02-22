@@ -17,6 +17,8 @@ resources:
   - ../../components/ui/
   # Katib webhooks.
   - ../../components/webhook/
+  # Public ConfigMap RBAC.
+  - ../../components/rbac/
 images:
   - name: ghcr.io/kubeflow/katib/katib-controller
     newName: ghcr.io/kubeflow/katib/katib-controller
@@ -32,6 +34,12 @@ configMapGenerator:
     behavior: create
     files:
       - katib-config.yaml
+    options:
+      disableNameSuffixHash: true
+  # Public ConfigMap for the Katib SDK.
+  - name: kubeflow-katib-public
+    literals:
+      - kubeflow_katib_version=dev
     options:
       disableNameSuffixHash: true
 # Secret for webhooks certs.
